@@ -24,3 +24,30 @@ var_dump($names);
 
 // count data in array
 var_dump(count($names));
+
+// Array as Map
+$adhim = array(
+    "id" => "adhim",
+    "name" => "Muh Rofiadhim",
+    "age" => 23,
+    "address" => [
+        "city" => "Jakarta",
+        "country" => "Indonesia",
+    ],
+);
+var_dump($adhim);
+var_dump($adhim["name"]);
+var_dump($adhim["address"]["country"]);
+
+
+$budi = [
+    "id" => "budi",
+    "name" => "Budi Raharjo",
+    "age" => 23,
+    "address" => array(
+        "city" => "Jakarta",
+        "country" => "Indonesia",
+    ),
+];
+var_dump($budi);
+var_dump($budi["name"]);
