@@ -2,6 +2,8 @@
 
 class Person
 {
+    const AUTHOR = "Rofiadhim";
+    
     var string $name;
     var ?string $address = null; // nullable properties
     var string $country = "Indonesia";
