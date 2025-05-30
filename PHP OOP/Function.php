@@ -10,3 +10,5 @@ $ryu = new Person();
 $ryu->name = "ryu";
 $ryu->sayHello(null);
 
+$adhim->info();
+$ryu->info();
