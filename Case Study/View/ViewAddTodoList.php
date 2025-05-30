@@ -8,10 +8,10 @@ function viewAddTodoList()
 {
     echo "ADD TODO" . PHP_EOL;
 
-    $todo = input("Todo (x for cancel) : ");
+    $todo = input("Todo (x for cancel)");
 
     if ($todo == "x") {
-        // batal
+        echo "Cancel adding todo" . PHP_EOL;
     } else {
         addTodoList($todo);
     }
