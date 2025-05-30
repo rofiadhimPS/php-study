@@ -3,7 +3,10 @@
 /**
  * add todo in list
  */
-function addTodoList()
+function addTodoList(string $todo)
 {
-
+    global $todoList;
+    $number = sizeof($todoList+1);
+    
+    $todoList[$number] = $todo;
 }
