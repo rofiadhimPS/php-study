@@ -42,7 +42,15 @@ class TodolistView
     
     function addTodolist(): void
     {
+        echo "ADD TODO" . PHP_EOL;
 
+        $todo = InputHelper::input("Todo (x for cancel)");
+
+        if ($todo == "x") {
+            echo "Cancel adding todo" . PHP_EOL;
+        } else {
+            $this->todolistService->addTodolist($todo);
+        }
     }
 
     function removeTodolist(): void
