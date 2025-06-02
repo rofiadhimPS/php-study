@@ -55,6 +55,14 @@ class TodolistView
 
     function removeTodolist(): void
     {
+        echo "REMOVE TODO" . PHP_EOL;
 
+        $choice = InputHelper::input("Number (x for cancel)");
+
+        if($choice == "x"){
+            echo "Cancel remove todo" . PHP_EOL;
+        }else {
+            $this->todolistService->removeTodolist($choice);
+        }
     }
 }
