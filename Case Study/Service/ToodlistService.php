@@ -2,6 +2,7 @@
 
 namespace Service;
 
+use Entity\Todolist;
 use Repository\TodolistRepository;
 
 interface TodolistService
@@ -32,7 +33,9 @@ class TodolistServiceImpl implements TodolistService
 
     public function addTodolist(string $todo): void
     {
-        
+        $todolist = new Todolist($todo);
+        $this->todolistRepository->save($todolist);
+        echo "SUCCESS ADDING TODO LIST" . PHP_EOL;
     }
 
     public function removeTodolist(int $number): void

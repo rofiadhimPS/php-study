@@ -19,7 +19,8 @@ class TodolistRepositoryImpl implements TodolistRepository
 
     public function save(Todolist $todolist): void
     {
-        
+        $number = sizeof($this->$todolist)+1;
+        $this->todolist[$number] = $todolist;
     }
 
     public function remove(int $number): bool
