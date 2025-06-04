@@ -11,24 +11,25 @@ use Service\TodolistServiceImpl;
 
 function testShowTodolist(): void
 {
-    $todolistRepository = new TodolistRepositoryImpl();
-    $todolistRepository->todolist[1] = new Todolist("PHP");
-    $todolistRepository->todolist[2] = new Todolist("PHP OOP");
-    $todolistRepository->todolist[3] = new Todolist("PHP Database");
-    
+    $connection = \Config\Database::getConnection();
+    $todolistRepository = new TodolistRepositoryImpl($connection);
     $todolistService = new TodolistServiceImpl($todolistRepository);
+
+    $todolistService->addTodolist("PHP");
+    $todolistService->addTodolist("PHP OOP");
+    $todolistService->addTodolist("PHP Database");
 
     $todolistService->showTodolist();
 }
 
-// testShowTodolist();
+testShowTodolist();
 
 function testAddTodolist(): void
 {
     $connection = \Config\Database::getConnection();
     $todolistRepository = new TodolistRepositoryImpl($connection);
-
     $todolistService = new TodolistServiceImpl($todolistRepository);
+
     $todolistService->addTodolist("PHP");
     $todolistService->addTodolist("PHP OOP");
     $todolistService->addTodolist("PHP Database");
@@ -52,4 +53,4 @@ function testRemoveTodolist(): void
     echo $todolistService->removeTodolist(3) . PHP_EOL; // Should succeed   
 }
 
-testRemoveTodolist();
+// testRemoveTodolist();
