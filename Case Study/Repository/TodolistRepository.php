@@ -66,6 +66,21 @@ class TodolistRepositoryImpl implements TodolistRepository
 
     public function findAll(): array
     {
-        return $this->todolist;
+        // return $this->todolist;
+
+        $sql = "SELECT id, todo FROM todolist";
+        $statement = $this->connection->query($sql);
+        $statement->execute();
+        $result = [];
+
+        foreach ($statement as $row) {
+            $todolist = new Todolist;
+            $todolist->setId($row['id']);
+            $todolist->setTodo($row['todo']);
+            $result[] = $todolist;
+        }
+        
+        return $result;
+        
     }
 }
