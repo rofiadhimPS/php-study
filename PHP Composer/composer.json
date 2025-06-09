@@ -1,0 +1,12 @@
+{
+    "name": "rofiadhimrajab/learn-php-composer",
+    "description": "learn-php-composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "rofiadhimPS",
+            "email": "muhammadrofiadhim@gmail.com"
+        }
+    ],
+    "require": {}
+}
