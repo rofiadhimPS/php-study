@@ -3,6 +3,7 @@
 namespace App\Test;
 
 use PHPUnit\Event\Runtime\PHP;
+use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 
 class CounterTest extends TestCase
@@ -10,14 +11,15 @@ class CounterTest extends TestCase
     public function testCounter()
     {
         $counter = new Counter();
-        $counter->increment();
-        $counter->increment();
 
-        echo "Counter value after increment: " . $counter->getCount() . PHP_EOL;
-    }
+        $counter->increment();
+        Assert::assertEquals(1, $counter->getCount());
 
-    public function testOther()
-    {
-        echo "This is another test method." . PHP_EOL;
+        $counter->increment();
+        $this->assertEquals(2, $counter->getCount());
+
+        $counter->increment();
+        self::assertSame(3, $counter->getCount());
+
+        }
     }
-}
