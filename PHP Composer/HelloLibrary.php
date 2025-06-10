@@ -6,4 +6,4 @@ use Rofiadhim\ComposerHello\Customer;
 
 $customer = new Customer("Adhim");
 echo $customer->sayHello("Ryu") . PHP_EOL;
-
+echo $customer->sayHello() . PHP_EOL;
