@@ -17,5 +17,9 @@
         "php": ">=8.0",
         "rofiadhimrajab/php-composer-hello": "2.0.0",
         "monolog/monolog": "^3.9"
+    },
+    "scripts": {
+        "run-server": "php -S localhost:8080",
+        "hello": "echo 'Hello, World!'"
     }
 }
