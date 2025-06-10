@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a31978e774b1609d823bc2f1d84ad0d8",
+    "content-hash": "fa3da2921ac0f4aca9b633fa3d765972",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -182,6 +182,7 @@
                     "Rofiadhim\\ComposerHello\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "rofiadhimPS",
@@ -190,8 +191,8 @@
             ],
             "description": "Library Composer Hello",
             "support": {
-                "source": "https://github.com/rofiadhimPS/composer-library-hello/tree/2.0.0",
-                "issues": "https://github.com/rofiadhimPS/composer-library-hello/issues"
+                "issues": "https://github.com/rofiadhimPS/composer-library-hello/issues",
+                "source": "https://github.com/rofiadhimPS/composer-library-hello/tree/2.0.0"
             },
             "time": "2025-06-10T04:42:08+00:00"
         }
