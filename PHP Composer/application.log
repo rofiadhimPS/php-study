@@ -1,0 +1,4 @@
+[2025-06-10T02:36:19.892100+02:00] hello-logging.INFO: Hello World Composer! [] []
+[2025-06-10T02:36:20.042405+02:00] hello-logging.INFO: This is a log message! [] []
+[2025-06-10T02:36:45.296611+02:00] hello-logging.INFO: Hello World Composer! [] []
+[2025-06-10T02:36:45.300020+02:00] hello-logging.INFO: This is a log message! [] []
