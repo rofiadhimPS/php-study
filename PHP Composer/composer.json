@@ -20,8 +20,8 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "rofiadhimrajab/composer-library": "1.0.0",
+        "php": ">=8.0",
+        "rofiadhimrajab/php-composer-hello": "1.0.0",
         "monolog/monolog": "^3.9"
     }
 }

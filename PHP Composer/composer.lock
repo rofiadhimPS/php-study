@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6dd3c3520687b72efebc5d1c7cbab9e2",
+    "content-hash": "8ae0e1ac55d0307317a9995c27dd6521",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -158,6 +158,42 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
             "time": "2024-09-11T13:17:53+00:00"
+        },
+        {
+            "name": "rofiadhimrajab/php-composer-hello",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rofiadhimPS/composer-library-hello.git",
+                "reference": "56afb46c7173b6582f5cab98b243d1217bf3cd24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rofiadhimPS/composer-library-hello/zipball/56afb46c7173b6582f5cab98b243d1217bf3cd24",
+                "reference": "56afb46c7173b6582f5cab98b243d1217bf3cd24",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rofiadhim\\ComposerHello\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "rofiadhimPS",
+                    "email": "muhammadrofiadhim@gmail.com"
+                }
+            ],
+            "description": "Library Composer Hello",
+            "support": {
+                "source": "https://github.com/rofiadhimPS/composer-library-hello/tree/1.0.0",
+                "issues": "https://github.com/rofiadhimPS/composer-library-hello/issues"
+            },
+            "time": "2025-06-10T04:02:29+00:00"
         }
     ],
     "packages-dev": [],
@@ -166,7 +202,9 @@
     "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
+    "platform": {
+        "php": ">=8.0"
+    },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
