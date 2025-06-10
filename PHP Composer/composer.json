@@ -13,7 +13,15 @@
             "App\\": "src/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rofiadhimPS/composer-library-hello"
+        }
+    ],
     "require": {
+        "php": "^8.0",
+        "rofiadhimrajab/composer-library": "1.0.0",
         "monolog/monolog": "^3.9"
     }
 }
