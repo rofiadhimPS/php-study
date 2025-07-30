@@ -2,22 +2,32 @@
 
 namespace App\Test;
 
+use PHPUnit\Framework\Attributes\Before;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class PersonTest extends TestCase
 {
+    private Person $person;
+    protected function setUp(): void
+    {
+        // $this->person = new Person("Alice");
+    }
+
+    #[Before()]
+    public function createPerson()
+    {
+        $this->person = new Person("Alice");
+    }
     public function testSuccess()
     {
-        $person = new Person("Alice");
-        $this->assertEquals("Hello Bob, my name is Alice.", $person->sayHello("Bob"));
+        $this->assertEquals("Hello Bob, my name is Alice.", $this->person->sayHello("Bob"));
     }
 
     public function testException()
     {
-        $person = new Person("Alice");
         $this->expectException(\Exception::class);
-        $person->sayHello(null);
-        
+        $this->person->sayHello(null);
     }
 
     public function testOutput()

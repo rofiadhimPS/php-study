@@ -3,24 +3,30 @@
 namespace App\Test;
 
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 
 class CounterTest extends TestCase
 {
+    private Counter $counter;
+
+    protected function setUp(): void
+    {
+        $this->counter = new Counter();
+        echo "Create Counter" . PHP_EOL;
+    }
     public function testCounter()
     {
-        $counter = new Counter();
+        $this->counter->increment();
+        Assert::assertEquals(1, $this->counter->getCount());
 
-        $counter->increment();
-        Assert::assertEquals(1, $counter->getCount());
+        $this->counter->increment();
+        $this->assertEquals(2, $this->counter->getCount());
 
-        $counter->increment();
-        $this->assertEquals(2, $counter->getCount());
-
-        $counter->increment();
-        self::assertSame(3, $counter->getCount());
+        $this->counter->increment();
+        self::assertSame(3, $this->counter->getCount());
 
     }
 
@@ -29,17 +35,15 @@ class CounterTest extends TestCase
      */
     public function testIncrement()
     {
-        $counter = new Counter();
-        $counter->increment();
-        Assert::assertEquals(1, $counter->getCount());
+        $this->counter->increment();
+        Assert::assertEquals(1, $this->counter->getCount());
     }
 
     public function testFirst(): Counter
     {
-        $counter = new Counter();
-        $counter->increment();
-        Assert::assertEquals(1, $counter->getCount());
-        return $counter;
+        $this->counter->increment();
+        Assert::assertEquals(1, $this->counter->getCount());
+        return $this->counter;
     }
 
     #[Depends('testFirst')]
@@ -47,5 +51,16 @@ class CounterTest extends TestCase
     {
         $counter->increment();
         Assert::assertEquals(2, $counter->getCount());
+    }
+
+    public function tearDown(): void
+    {
+        echo "Tear Down" . PHP_EOL;
+    }
+
+    #[After()]
+    public function after(): void
+    {
+        echo "After" . PHP_EOL;
     }
 }
