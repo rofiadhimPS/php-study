@@ -15,4 +15,9 @@ class Person
 
         return "Hello $name, my name is {$this->name}.";
     }
+
+    public function sayGoodbye(?string $name): void
+    {
+        echo "Goodbye $name" . PHP_EOL;
+    }
 }
