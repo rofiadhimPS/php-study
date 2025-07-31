@@ -6,16 +6,43 @@ class HomeController
 {
     function index()
     {
-        echo "Welcome to the Home Page!";
+        $model = [
+            "title" => "Home Page",
+            "content" => "Welcome to the Home Page!"
+        ];
+        echo $model["content"];
     }
 
     function hello()
     {
-        echo "Hello from HomeController!";
+        $model = [
+            "title" => "Hello Page",
+            "content" => "Hello from HomeController!"
+        ];
+        echo $model["content"];
     }
     
     function world()
     {
-        echo "World from HomeController!";
+        $model = [
+            "title" => "World Page",
+            "content" => "World from HomeController!"
+        ];
+        echo $model["content"];
     }   
+
+    function login()
+    {
+        $request = [
+            "username" => $_POST['username'] ?? '',
+            "password" => $_POST['password'] ?? ''
+        ];
+
+        $response = [
+            "status" => "success",
+            "message" => "Login successful!",
+            "data" => $request
+        ];
+        echo json_encode($response);
+    }
 }
