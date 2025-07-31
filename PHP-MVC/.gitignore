@@ -1,0 +1,68 @@
+# Dependency directories
+/vendor/
+/node_modules/
+
+# Composer files
+composer.phar
+composer.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+/storage/logs/
+
+# Cache directories
+/cache/
+/tmp/
+/temp/
+
+# Session files
+/storage/sessions/
+
+# Compiled files
+*.compiled
+
+# PHPUnit
+/phpunit.xml
+/.phpunit.result.cache
+
+# Coverage reports
+/coverage/
+/build/coverage/
+clover.xml
+
+# Package files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Config files that might contain sensitive data
+config/database.php
+config/secrets.php
