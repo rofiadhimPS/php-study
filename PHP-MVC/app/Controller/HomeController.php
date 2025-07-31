@@ -2,6 +2,8 @@
 
 namespace Rofiadhim\Study\PHP\MVC\Controller;
 
+use Rofiadhim\Study\PHP\MVC\App\View;
+
 class HomeController
 {
     function index()
@@ -10,7 +12,8 @@ class HomeController
             "title" => "Home Page",
             "content" => "Welcome to the Home Page!"
         ];
-        echo $model["content"];
+        
+        View::render('Home/index', $model);
     }
 
     function hello()
@@ -44,5 +47,6 @@ class HomeController
             "data" => $request
         ];
         echo json_encode($response);
+
     }
 }
