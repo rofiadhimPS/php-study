@@ -1,3 +1,7 @@
 <?php
 
-echo "Hello, World! This is the entry point of the PHP MVC application.\n";
+if(isset($_SERVER['PATH_INFO'])){
+    echo "Path Info: " . $_SERVER['PATH_INFO'];
+} else {
+    echo "No Path Info set.";
+}
