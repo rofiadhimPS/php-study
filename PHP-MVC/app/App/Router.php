@@ -22,13 +22,17 @@ class Router
         $method = $_SERVER['REQUEST_METHOD'];
 
         foreach (self::$routes as $route) {
-            if ($route['method'] == $method && $route['path'] == $path) {
+            $pattern = '#^' . ($route['path']) . '$#';
+            if (preg_match($pattern, $path, $matches) && $route['method'] == $method) {
                 $function = $route['function'];
                 $controllerClass = $route['controller'];
                 
                 // Create instance of controller
                 $controller = new $controllerClass();
-                $controller->$function();
+                // $controller->$function();
+
+                array_shift($matches); // Remove the full match from the matches array
+                call_user_func_array([$controller, $function], $matches);
                 return;
             }
         }
