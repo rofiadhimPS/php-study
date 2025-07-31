@@ -23,7 +23,12 @@ class Router
 
         foreach (self::$routes as $route) {
             if ($route['method'] == $method && $route['path'] == $path) {
-                echo "Controller : " . $route['controller'] . " Function : " . $route['function'];
+                $function = $route['function'];
+                $controllerClass = $route['controller'];
+                
+                // Create instance of controller
+                $controller = new $controllerClass();
+                $controller->$function();
                 return;
             }
         }
