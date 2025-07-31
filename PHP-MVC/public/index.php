@@ -1,7 +1,9 @@
 <?php
 
+$path = "/index";
+
 if(isset($_SERVER['PATH_INFO'])){
-    echo "Path Info: " . $_SERVER['PATH_INFO'];
-} else {
-    echo "No Path Info set.";
+    $path = $_SERVER['PATH_INFO'];
 }
+
+require_once __DIR__ . '/../app/View/' . $path . '.php';
