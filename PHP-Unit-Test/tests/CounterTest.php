@@ -5,6 +5,7 @@ namespace App\Test;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\Attributes\RequiresOperatingSystemFamily;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 
@@ -16,6 +17,12 @@ class CounterTest extends TestCase
     {
         $this->counter = new Counter();
         echo "Create Counter" . PHP_EOL;
+    }
+
+    public function testIncrement()
+    {
+        self::assertEquals(0, $this->counter->getCount());
+        self::markTestIncomplete('This test is incomplete and needs to be implemented.');
     }
     public function testCounter()
     {
@@ -30,11 +37,10 @@ class CounterTest extends TestCase
 
     }
 
-    /**
-     * @test
-     */
-    public function testIncrement()
+    #[Test]
+    public function increment()
     {
+        self::markTestSkipped("This test is skipped for demonstration purposes.");
         $this->counter->increment();
         Assert::assertEquals(1, $this->counter->getCount());
     }
@@ -62,5 +68,11 @@ class CounterTest extends TestCase
     public function after(): void
     {
         echo "After" . PHP_EOL;
+    }
+
+    #[RequiresOperatingSystemFamily('darwin')]
+    public function testOnlyMac()
+    {
+        self::assertTrue(true, 'This test is only for Mac');
     }
 }
