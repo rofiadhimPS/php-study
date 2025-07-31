@@ -11,7 +11,7 @@ class ProductServiceTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->repository = $this->createStub(ProductRepository::class); 
+        $this->repository = $this->createMock(ProductRepository::class); 
         $this->service = new ProductService($this->repository);   
     }
 
@@ -94,5 +94,52 @@ class ProductServiceTest extends TestCase
         // This line should not be reached, as an exception is expected
     }
 
-    
+    public function testDeleteSuccess()
+    {
+        $product = new Product();
+        $product->setId('1');
+        
+        $this->repository->expects($this->once())
+            ->method('delete')
+            ->with(self::equalTo($product));
+
+        $this->repository->expects($this->once())
+            ->method('findById')
+            ->willReturn($product)
+            ->with(self::equalTo('1'));
+        
+        $this->service->delete('1');
+        self::assertTrue(true, 'Product should be deleted without exception');
+    }
+
+    public function testDeleteException()
+    {
+        $this->repository->expects(self::never())
+            ->method('delete');
+        
+        $this->expectException(\Exception::class);
+
+        $this->repository->expects($this->once())
+            ->method('findById')
+            ->willReturn(null)
+            ->with(self::equalTo('1'));
+        
+        $this->service->delete('1');
+        // This line should not be reached, as an exception is expected
+    }
+
+    public function testMock()
+    {
+        $product = new Product();
+        $product->setId('1');
+
+        $this->repository->expects($this->once())
+            ->method('findById')
+            ->with('1')
+            ->willReturn($product);
+        
+        $result = $this->repository->findById('1');
+        self::assertSame($product, $result, 'The product should be the same as the mocked one');            
+
+    }
 }

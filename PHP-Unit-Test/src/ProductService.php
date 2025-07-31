@@ -31,5 +31,6 @@ class ProductService
         }
         
         $this->repository->delete($product);
+
     }
 } 

@@ -8,7 +8,7 @@ interface ProductRepository
 
     public function save(Product $product): product;
 
-    public function delete(Product $product): void;
+    public function delete(?Product $product): void;
 
     public function findAll(): array;
 }
